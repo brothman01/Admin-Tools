@@ -53,7 +53,7 @@ class Settings extends WPMonitor {
 
 										do_settings_sections( 'options_page' );
 
-										submit_button();
+										// submit_button();
 
 										?>
 									</form>
@@ -85,21 +85,21 @@ class Settings extends WPMonitor {
 					[ $this, 'wpm_sanitize' ]
 				);
 
-								add_settings_field(
-									'wpm_show_monitor',
-									__( 'Show Classic Monitor? (not widget)', 'admin-tools' ),
-									[ $this, 'wpm_show_monitor_callback' ],
-									'options_page',
-									'general_section_id'
-								);
+								// add_settings_field(
+								// 	'wpm_show_monitor',
+								// 	__( 'Show Classic Monitor? (not widget)', 'admin-tools' ),
+								// 	[ $this, 'wpm_show_monitor_callback' ],
+								// 	'options_page',
+								// 	'general_section_id'
+								// );
 
-								add_settings_field(
-									'wpm_how_often',
-									__( 'Show Classic Monitor?', 'admin-tools' ),
-									[ $this, 'wpm_show_monitor_callback' ],
-									'options_page',
-									'general_section_id2'
-								);
+								// add_settings_field(
+								// 	'wpm_how_often',
+								// 	__( 'Show Classic Monitor?', 'admin-tools' ),
+								// 	[ $this, 'wpm_show_monitor_callback' ],
+								// 	'options_page',
+								// 	'general_section_id2'
+								// );
 
 	}
 
@@ -144,20 +144,15 @@ class Settings extends WPMonitor {
 	 */
 	public function wpm_general_section_callback() {
 
-		esc_attr_e( 'Edit the settings for the plugin here.  For support or to check out the cool add-ons available for Admin Tools, visit us at', 'wp-monitor' );
+		esc_attr_e( 'Edit the settings for the plugin here. ', 'wp-monitor' );
 
-		esc_attr_e( '<a href="http://www.wp-monitor.net">www.wp-monitor.net</a>.' );
 
-		printf(
-			'<br />
-			<h3>%1$s</h3>' .
-			'<select multiple>
-				<option %2$s>%3$s</option>
-			</select>',
-			esc_html__( 'Active Addons', 'wp-monitor' ),
-			esc_attr( $this->get_color( 'emailaddon' ) ),
-			esc_html__( 'Email Notifications', 'wp-monitor' )
-		);
+
+		echo '<table>';
+
+		echo $this->variable_table();
+
+		echo '</table>';
 
 	}
 

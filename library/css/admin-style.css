@@ -92,9 +92,10 @@ h3 {
 			text-align: center !important;
 		}
 
-/*.cell {
-	margin-bottom: 1%;
-}*/
+.cell {
+	float: none;
+	width: 100%!important;
+}
 
 	.cell h3 {
 		text-align: center;
@@ -108,7 +109,7 @@ h3 {
 	#gauge {
 			width: 300px;
 			height: 300px;
-	}
+		}
 
 .wpm_table {
 	display: block;
@@ -124,7 +125,7 @@ h3 {
 }
 
 .indicator {
-	width: 75%;
+	width: 100%;
 	margin-top: 15%;
 	margin: 0px auto;
 	padding: 10px 10px;
@@ -132,7 +133,7 @@ h3 {
 
 		.inner_indicator {
 			text-align: center;
-			width: 50%;
+			width: 100%;
 			margin: 0px auto;
 			font-size: 12px;
 		}
@@ -147,8 +148,8 @@ h3 {
 		}
 
 				.indicator_light {
-					width: 35px;
-					height: 35px;
+					width: 75px;
+					height: 75px;
 					background: #EDEBEB;
 					-webkit-border-radius: 100%;
 					border-radius: 100%;
@@ -362,4 +363,13 @@ table.widefat th, table.widefat td {
     float: left;
     width: 1%;
     min-height: 100px;
+}
+
+.wpm_table {
+		width: 100%;
+}
+
+.wpm_table thead {
+	color: white;
+	padding: 10px;
 }

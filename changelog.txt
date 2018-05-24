@@ -1,0 +1,4 @@
+1.1.5:
+- Added all variables to printout Page
+~ Added all variables to settings Page
+- Changed widget to stacked formation

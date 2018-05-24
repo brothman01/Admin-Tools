@@ -139,50 +139,24 @@ class WPMonitor {
 
 		echo '<h1 style="text-align: center; margin-bottom: 2%;">' . 'Status Page for \'' . $wpm_variables['Name'] . '\' (' . $wpm_variables['URL'] . ')</h1>';
 
-		echo '<table class="wp-list-table widefat fixed striped">';
+echo '<table class="wpm_table" width="100%">';
 
-		echo '<tr>
-		<th>Name:</th>
-		<th>' . esc_attr( $wpm_variables['Name'] ) . '</th>
-	</tr>
-	<tr>
-		<th>URL:</th>
-		<th>' . esc_attr( $wpm_variables['URL'] ) . '</th>
-	</tr>
-	<tr>
-		<th>Server IP:</th>
-		<th>' . esc_attr( $wpm_variables['Server IP'] ) . '</th>
-	</tr>
-	<tr>
-		<th>WP Version:</th>
-		<th>' . esc_attr( $wpm_variables['WP Version'] ) . '</th>
-	</tr>
-	<tr>
-		<th>PHP Version:</th>
-		<th>' . esc_attr( $wpm_variables['PHP Version'] ) . '</th>
-	</tr>
-	<tr>
-		<th>Uploads Directory Size:</th>
-		<th>' . esc_attr( $wpm_variables['Uploads Directory Size'] ) . '</th>
-	</tr>
-	<tr>
-		<th>SMTP:</th>
-		<th>' . esc_attr( $wpm_variables['SMTP'] ) . '</th>
-	</tr>
-	<tr>
-		<th>Discourage Search Engines:</th>
-		<th>' . esc_attr( $wpm_variables['Discourage Search Engines'] ) . '</th>
-	</tr>
-	 <tr>
-		<td>' . __( ' Plugin Update(s)', 'admin-tools' ) . '</td>
-		<td>' . esc_attr( self::$updates['plugins'] ) . '</td>
-	</tr>
-	<tr>
-			<td>' . __( ' Theme Update(s)', 'admin-tools' ) . '</td>
-			<td>' . esc_attr( self::$updates['themes'] ) . '</td>
-	</tr>';
+		echo '<thead>';
+
+			echo '<tr>
+				<th>' . __( 'Variable', 'wp-monitor' ) . '</th>
+				<th>' . __( 'Value', 'wp-monitor' ) . '</th>
+			</tr>';
+
+		echo '</thead>';
+
+		echo $this->variable_table();
 
 		echo '</table>';
+
+		echo '<a style="color: #0073aa;"href="http://wp-monitor.net/2017/03/30/what-does-that-value-mean/">What Does That Value Mean?</a>';
+
+		echo '</div>';
 	}
 
 	public function get_plugin_info( $slug ) {
@@ -399,7 +373,7 @@ class WPMonitor {
 			<li><a href="#tabs-dashboard-2">SSL/PHP (' . ( is_ssl() ? 'on' : 'off' ) . '/' . $this->php_version( 2 ) . ')</a></li>
 			<li><a href="#tabs-dashboard-3">Grades</a></li>
 			<li><a href="#tabs-dashboard-4">Variables (...)</a></li>
-			<li><a href="#tabs-dashboard-5">Logins</a></li>
+			<li><a href="#tabs-dashboard-5">User Logins</a></li>
 		</ul>';
 
 		echo '</div>';
@@ -699,7 +673,7 @@ class WPMonitor {
 
 				$content = '<div class="onequarter cell">';
 
-				$content .= '<h3>' . esc_attr( $title ) . '</h3>';
+				$content .= '<h3>' . esc_attr( $title ) . ' (' . $value . '/' . $max . ')' . '</h3>';
 
 				$content .= '<div id="' . esc_attr( $gauge_class ) . '" class="gauge"></div>
 						<script>
@@ -707,10 +681,10 @@ class WPMonitor {
 							document.addEventListener( "DOMContentLoaded", function( event ) {
 								var g1_' . esc_attr( $gauge_class ) . ' = new JustGage( {
 									id: "' . esc_attr( $gauge_class ) . '",
-									value: ' . esc_attr( $value ) . ',
+									value: ' . esc_attr( $value ) .  ',
 									min: 0,
 									max: ' . esc_attr( $max ) . ',
-									title: "' . esc_attr( $title ) . '",
+									title: "' . esc_attr( $title ) . ' (' . $value . '/' . $max . ')' . '",
 									gaugeWidthScale: 0.6,
 									customSectors: {
 										percents: true,
@@ -990,11 +964,11 @@ class WPMonitor {
 	 */
 	public function wpm_enqueue_admin_styles( $hook ) {
 
-		if ( 'index.php' !== $hook ) {
-
-			return;
-
-		}
+		// if ( 'index.php' !== $hook ) {
+		//
+		// 	return;
+		//
+		// }
 		$suffix = SCRIPT_DEBUG ? '' : '.min';
 
 		wp_register_style( 'wpm_admin_css', plugin_dir_url( __FILE__ ) . "/library/css/admin-style{$suffix}.css", false, '1.0.0' );

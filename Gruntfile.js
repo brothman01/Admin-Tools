@@ -280,6 +280,7 @@ module.exports = function(grunt) {
 	grunt.registerTask( 'minify',     [
 		'autoprefixer',
 		'usebanner',
+		'cssmin',
 		'uglify',
 		'imagemin'
 	] );
