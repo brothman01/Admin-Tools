@@ -53,8 +53,6 @@ class Settings extends WPMonitor {
 
 										do_settings_sections( 'options_page' );
 
-										// submit_button();
-
 										?>
 									</form>
 								</div>
@@ -84,22 +82,6 @@ class Settings extends WPMonitor {
 					'wpm_prevent_email_cron',
 					[ $this, 'wpm_sanitize' ]
 				);
-
-								// add_settings_field(
-								// 	'wpm_show_monitor',
-								// 	__( 'Show Classic Monitor? (not widget)', 'admin-tools' ),
-								// 	[ $this, 'wpm_show_monitor_callback' ],
-								// 	'options_page',
-								// 	'general_section_id'
-								// );
-
-								// add_settings_field(
-								// 	'wpm_how_often',
-								// 	__( 'Show Classic Monitor?', 'admin-tools' ),
-								// 	[ $this, 'wpm_show_monitor_callback' ],
-								// 	'options_page',
-								// 	'general_section_id2'
-								// );
 
 	}
 
