@@ -45,3 +45,6 @@ deploy:
     condition: "$WP_VERSION=trunk"
   skip_cleanup: true
   overwrite: true
+  addons:
+    apt:
+      update: true
