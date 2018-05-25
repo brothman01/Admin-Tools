@@ -137,24 +137,14 @@ class WPMonitor {
 
 		$themes_that_need_updates = $this->get_themes_that_need_updates( wp_get_themes() );
 
-		echo '<h1 style="text-align: center; margin-bottom: 2%;">' . 'Status Page for \'' . $wpm_variables['Name'] . '\' (' . $wpm_variables['URL'] . ')</h1>';
+echo '<h1>' . 'Status Page for: ' . get_option( 'home' ) . '</h1>';
 
 echo '<table class="wpm_table" width="100%">';
 
-		echo '<thead>';
-
-			echo '<tr>
-				<th>' . __( 'Variable', 'wp-monitor' ) . '</th>
-				<th>' . __( 'Value', 'wp-monitor' ) . '</th>
-			</tr>';
-
-		echo '</thead>';
 
 		echo $this->variable_table();
 
 		echo '</table>';
-
-		echo '<a style="color: #0073aa;"href="http://wp-monitor.net/2017/03/30/what-does-that-value-mean/">What Does That Value Mean?</a>';
 
 		echo '</div>';
 	}
@@ -290,7 +280,7 @@ echo '<table class="wpm_table" width="100%">';
 
 		echo '<div id="tabs-dashboard">';
 
-		echo '<a href="#" class="wpm_printout_link"> <i class="fa fa-print" aria-hidden="true" style="font-size: 2em; margin: 1% 0px 0px 1%;"></i> </a>';
+		echo '<a href="#" class="wpm_printout_link"> <i class="fa fa-print" aria-hidden="true" style="font-size: 2em; margin: 1% 0px 0px 1%;"></i>&nbsp;Printer-friendly Page </a>';
 
 		echo '<div id="tabs-dashboard-1" style="min-height: 200px;">';
 
@@ -345,7 +335,7 @@ echo '<table class="wpm_table" width="100%">';
 
 		echo '</table>';
 
-		echo '<a style="color: #0073aa;"href="http://wp-monitor.net/2017/03/30/what-does-that-value-mean/">What Does That Value Mean?</a>';
+
 
 		echo '</div>';
 
@@ -623,7 +613,6 @@ echo '<table class="wpm_table" width="100%">';
 
 					echo '</table>';
 
-					echo '<a style="color: #0073aa;"href="http://wp-monitor.net/2017/03/30/what-does-that-value-mean/">What Does That Value Mean?</a>';
 
 				echo '</div>';
 
@@ -895,8 +884,8 @@ echo '<table class="wpm_table" width="100%">';
 
 					$all_vars .=
 					'<tr>
-						<th>' . $key . '</th>
-						<th>' . $value . '</th>
+						<th align="left">' . $key . '</th>
+						<th align="left">' . $value . '</th>
 					</tr>';
 
 				}
