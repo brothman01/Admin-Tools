@@ -144,7 +144,7 @@ echo '<table class="wpm_table" width="100%">';
 
 		echo $this->variable_table();
 
-		echo '</table>';
+echo '</table>';
 
 		echo '</div>';
 	}

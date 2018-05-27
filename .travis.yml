@@ -1,11 +1,5 @@
 sudo: false
 language: php
-notifications:
-  email:
-    on_success: never
-    on_failure: change
-  slack:
-    secure: m7u+XoneBm6N+VSt8lkpH9Zi8aZMA7vgg7VZgCc7PiP/N0nbUAeoNHIWv6Hi4mc6xfZYuQ31EHSKt4uM3f710rzR8JuYSd97vVAMronP2vMMw2ziP9jaTehTSLVozChUVsf0D6UsN2CXj/7NEirEXnNkiU7H95GJKMP2b+ptcIVfWc6xnNNvIlChGxOchqdQ6wyi4Genoj7HU+L6GZBSlExUI0lBm9jOtsDuf+sAywZRC2m8S/3Y1njqvu/6vfS6SpBkglhcwHKdKYFDDdSBrY1xkogL3uiDJCPUh2GcsiB/WB4Rkzz1vl1YScD8kcW+HOvwtpzeQhawzBSERO9b4BX2oUqEZZRQOyfZgb7++leofYpTTtHkEgfQMVXSxd0kOpTnVK0ukuHGSsU2SesJPyINJtH7GQgz00c1TgiihNzL8968WLqkz2FRhyIuNZN8C5n2GQLbJkOmVBI3n9qS9vocf14uMkP3SESlJDF3MDhPV2JOKjB0WRE1SZwGS08pTGeG+nC8NnInM2bjJ84aF8FN72wISFlGv2J6uYSCL6mHsX7Oar4Pg21Jck9f3/Zw/fAaKQQcFaAwtajXPI/Cp+sS0Scyq4AIHxbWCtUhQ4mq8cl141pqod2BoPzgpBXvTvFQcHzcm/jnNfeCvfk8QZQBiBBVTM0ARwq/bmPZFMc=
 branches:
   only:
   - "/^v\\d.*$/"
