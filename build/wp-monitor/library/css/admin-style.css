@@ -1,0 +1,365 @@
+
+/* Settings Page Dashboard */
+#dashboard_main {
+	width: 100%;
+	clear: both;
+	overflow-y: hidden;
+}
+
+h3 {
+	margin-left: 10px;
+}
+
+#welcome-panel {
+	display: none;
+}
+
+.onequarter {
+	float: left;
+	width: 24%;
+}
+
+.onethird {
+	float: left;
+	width: 33%;
+}
+
+.tablesthird {
+	float: left;
+	width: 32%;
+}
+
+#mail_indicator {
+	position: absolute;
+	top: 25px;
+	left: 5px;
+	-webkit-border-radius: 100%;
+	border-radius: 100%;
+}
+
+.half {
+	float: left;
+	width: 48%;
+}
+
+	.half h3 {
+		margin-top: 0px;
+	}
+
+.left_half {
+		margin-right: 10px;
+}
+
+#second_gauge_row {
+	float: left;
+}
+
+#third_gauge_row {
+	float: left;
+	width: 99%;
+	text-align: center;
+	padding-top: 2%;
+}
+
+
+.ui-state-active,
+.ui-state-active a {
+	background: #007FFF !important;
+	color: white !important;
+}
+
+.twothirds {
+	float: left;
+	width: 65%;
+}
+
+#tabs {
+	float: left;
+	width: 100%;
+	display: table;
+}
+	table {
+		display: block;
+		border-collapse: collapse;
+		width: 100%;
+	}
+
+		tbody {
+			display: block;
+		}
+
+		.centertext {
+			text-align: center !important;
+		}
+
+/*.cell {
+	margin-bottom: 1%;
+}*/
+
+	.cell h3 {
+		text-align: center;
+		font-family: sans-serif;
+		font-size: 15px;
+		color: #999999;
+		margin-bottom: 5%;
+		margin-top: 10px;
+	}
+
+	#gauge {
+			width: 300px;
+			height: 300px;
+	}
+
+.wpm_table {
+	display: block;
+	height: 500px;
+	overflow-y: scroll;
+	margin-bottom: 39px
+}
+
+.wpm_half_table {
+	display: block;
+	height: 225px;
+	overflow-y: scroll;
+}
+
+.indicator {
+	width: 75%;
+	margin-top: 15%;
+	margin: 0px auto;
+	padding: 10px 10px;
+}
+
+		.inner_indicator {
+			text-align: center;
+			width: 50%;
+			margin: 0px auto;
+			font-size: 12px;
+		}
+
+		.cell p {
+			text-align: center;
+			width: 100%;
+			margin: 0px auto;
+			color: black;
+			font-size: 12px;
+			margin: 1% 0px;
+		}
+
+				.indicator_light {
+					width: 35px;
+					height: 35px;
+					background: #EDEBEB;
+					-webkit-border-radius: 100%;
+					border-radius: 100%;
+					margin: 0px auto;
+				}
+
+#wpm_php_indicator {
+		text-align: center;
+		font-size: 12px;
+		background: #F9F9F9;
+		color: white;
+		corder: solid black 1px;
+	}
+
+	.breakdown_link {
+		font-size: 10px;
+	}
+
+.overall {
+	font-size: 58px;
+	text-align: center;
+}
+
+	#ssl_note {
+		font-size: 12px;
+	}
+
+
+
+
+	/* Small Desktop larger ----------- */
+/*@media only screen and (max-width : 2230px) {
+
+	.indicator_light {
+		width: 25px;
+		height: 25px;
+
+	}
+
+}*/
+
+	/* Small Desktop ----------- */
+@media only screen and (max-width : 1366px) {
+
+table.widefat th, table.widefat td {
+	font-size: 12px!important;
+}
+
+	.tablesthird {
+		/* width: 100%; */
+	}
+
+	.twothirds {
+		width: 99%;
+	}
+
+	.half {
+	    width: 48%;
+	}
+
+	.indicator {
+		padding-top: 30px;
+	}
+
+		.indicator_light {
+			width: 18px;
+			height: 18px;
+
+		}
+
+}
+
+/* Small Desktop ----------- */
+@media only screen and (max-width : 1366px) {
+
+.tablesthird {
+	width: 100%;
+	margin-top: 2%;
+}
+
+#tabs{
+	width: 100%;
+}
+
+}
+/* iPad ----------- */
+@media only screen and (max-width : 1024px) {
+
+	#gauge {
+			width: 100px;
+			height: 100px;
+	}
+
+}
+
+/* iPhone ----------- */
+@media only screen and (max-width : 640px) {
+
+	.onequarter {
+		float: left;
+		width: 50%;
+		overflow-y: hidden;
+	}
+
+	#gauge {
+			width: 300px!important;
+			height: 300px!important;
+	}
+
+	.indicator_light {
+		margin-bottom: 10px;
+	}
+
+}
+
+/* Low-end Windows Phone ----------- */
+@media only screen and (max-width : 640px) {
+
+	#gauge {
+			width: 20px;
+			height: 20px;
+	}
+
+	#php_action_field {
+		width: 95%;
+		font-size: 10px;
+	}
+
+}
+
+/* HGVA (old iPhones, small androids, etc) ----------- */
+@media only screen and (max-width : 640px) {
+
+	.indicator {
+		padding-top: 10px;
+	}
+
+	#gauge {
+			width: 10px;
+			height: 10px;
+	}
+
+}
+
+/* Style tabs */
+#tabs-dashboard {
+    padding: 0px;
+    background: none;
+    border-width: 0px;
+}
+
+	#tabs-dashboard div {
+			border: none;
+	}
+
+#tabs-dashboard .ui-tabs-nav {
+    padding-left: 0px;
+    border-width: 0px 0px 1px 0px;
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+}
+#tabs-dashboard .ui-tabs-panel {
+    border-width: 0px 1px 1px 1px;
+}
+
+#tabs-dashboard ul li a {
+	color: #0073aa;
+}
+
+.ui-tabs-nav.ui-helper-reset.ui-helper-clearfix.ui-widget-header.ui-corner-all,
+.ui-state-default.ui-corner-top {
+	background: white !important;
+	border: none !important;
+}
+
+.ui-state-active {
+	background: red!important;
+}
+
+
+.clear:before,
+.clear:after {
+    content: "";
+    display: table;
+}
+
+.clear:after {
+    clear: both;
+}
+
+.clear {
+    *zoom: 1;
+}
+
+
+
+.size-1 {
+    width: 20%;
+}
+
+.size-2 {
+    width: 30%;
+}
+
+.size-3 {
+    width: 48%;
+}
+
+.h-split {
+    display: block;
+    float: left;
+    width: 1%;
+    min-height: 100px;
+}
