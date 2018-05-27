@@ -116,7 +116,6 @@ class WPMonitor {
 	 * @since 0.1
 	 */
 	public function add_dashboard_widget() {
-
 		wp_add_dashboard_widget(
 			'wp_monitor',
 			'WP Monitor ',
@@ -137,14 +136,13 @@ class WPMonitor {
 
 		$themes_that_need_updates = $this->get_themes_that_need_updates( wp_get_themes() );
 
-echo '<h1>' . 'Status Page for: ' . get_option( 'home' ) . '</h1>';
+		echo '<h1>' . 'Status Page for: ' . get_option( 'home' ) . '</h1>';
 
-echo '<table class="wpm_table" width="100%">';
-
+		echo  '<table class="wpm_table" width="100%">';
 
 		echo $this->variable_table();
 
-echo '</table>';
+		echo '</table>';
 
 		echo '</div>';
 	}
@@ -334,8 +332,6 @@ echo '</table>';
 		echo $this->variable_table();
 
 		echo '</table>';
-
-
 
 		echo '</div>';
 
@@ -613,7 +609,6 @@ echo '</table>';
 
 					echo '</table>';
 
-
 				echo '</div>';
 
 							echo '<div id="tabs-2">
@@ -670,7 +665,7 @@ echo '</table>';
 							document.addEventListener( "DOMContentLoaded", function( event ) {
 								var g1_' . esc_attr( $gauge_class ) . ' = new JustGage( {
 									id: "' . esc_attr( $gauge_class ) . '",
-									value: ' . esc_attr( $value ) .  ',
+									value: ' . esc_attr( $value ) . ',
 									min: 0,
 									max: ' . esc_attr( $max ) . ',
 									title: "' . esc_attr( $title ) . ' (' . $value . '/' . $max . ')' . '",

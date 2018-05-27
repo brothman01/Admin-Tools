@@ -128,8 +128,6 @@ class Settings extends WPMonitor {
 
 		esc_attr_e( 'Edit the settings for the plugin here. ', 'wp-monitor' );
 
-
-
 		echo '<table>';
 
 		echo $this->variable_table();
