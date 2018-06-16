@@ -1,5 +1,9 @@
 <?php
 /**
+ * @package  WP Monitor
+ * @category Class
+ * @author   Ben Rothman
+ * @since    1.1.1
  * Plugin Name: WP Monitor
  * Description: Collects important data from site and displays it on the dashboard
  * Version:     1.1.4
@@ -8,19 +12,11 @@
  * Author URI:  http://www.BenRothman.org
  * License:     GPL-2.0+
  */
+
 if ( ! defined( 'ABSPATH' ) ) {
 	die( 'unauthorized' );
 }
 
-/**
- * WP-Monitor.
- *
- * @class    WP Monitor
- * @package  WP Monitor
- * @category Class
- * @author   Ben Rothman
- * @since    1.1.1
- */
 class WPMonitor {
 
 	public static $updates;
@@ -424,10 +420,10 @@ class WPMonitor {
 	}
 
 	/**
-	* Check WordPress site and server for updates
-	*
-	* @since 0.1
-	*/
+	 * Check WordPress site and server for updates
+	 *
+	 * @since 0.1
+	 */
 	public function wpm_check_for_updates() {
 
 		if ( ! current_user_can( 'install_plugins' ) ) {
@@ -906,7 +902,7 @@ class WPMonitor {
 
 		foreach ( $files as $t ) {
 
-			if ( '.' <> $t && '..' <> $t ) {
+			if ( '.' !== $t && '..' !== $t ) {
 
 				$current_file = $clean_path . $t;
 
@@ -948,11 +944,6 @@ class WPMonitor {
 	 */
 	public function wpm_enqueue_admin_styles( $hook ) {
 
-		// if ( 'index.php' !== $hook ) {
-		//
-		// 	return;
-		//
-		// }
 		$suffix = SCRIPT_DEBUG ? '' : '.min';
 
 		wp_register_style( 'wpm_admin_css', plugin_dir_url( __FILE__ ) . "/library/css/admin-style{$suffix}.css", false, '1.0.0' );
@@ -960,7 +951,6 @@ class WPMonitor {
 
 		wp_register_script( 'wpm_counter', plugin_dir_url( __FILE__ ) . 'library/js/renamed.js', [ 'jquery' ], '1.0.0' );
 		wp_localize_script( 'wpm_counter', 'wpm_data', [
-			// 'total'	=> self::$updates['plugins'] + self::$updates['themes'] + self::$updates['WordPress'] + self::$updates['PHP_update'],
 			'grade'             => (integer) $this->calculate_grade(),
 			'WordPress'         => intval( self::$updates['WordPress'] ),
 			'ssl'               => self::$updates['SSL'],

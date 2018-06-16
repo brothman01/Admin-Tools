@@ -1,5 +1,17 @@
 <?php
 /**
+ * Footer
+ *
+ * Main footer file for the theme.
+ *
+ * @package WP Monitor
+ * @subpackage Settings
+ * @version 1.0.0
+ * @author  Ben Rothman
+ * @license https://www.gnu.org/licenses/gpl-3.0.txt GNU/GPLv3
+ */
+
+/**
  * Helper class to contain all of the settings for the plugin.
  */
 class Settings extends WPMonitor {
@@ -43,7 +55,7 @@ class Settings extends WPMonitor {
 	 * Creates the admin page where settings for this plugin can be edited.
 	 */
 	public function create_admin_page() {
-							?>
+		?>
 							<div class="wrap">
 								<h1>WP Monitor</h1>
 								<form method="post" action="options.php">
@@ -55,7 +67,7 @@ class Settings extends WPMonitor {
 
 										?>
 									</form>
-								</div>
+							</div>
 								<?php
 	}
 
@@ -130,7 +142,7 @@ class Settings extends WPMonitor {
 
 		echo '<table>';
 
-		echo $this->variable_table();
+		echo esc_html( $this->variable_table() );
 
 		echo '</table>';
 
