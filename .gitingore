@@ -1,2 +1,4 @@
 node_modules
+node_modules/*
 wp-org-assets
+wp-org-assets/*
