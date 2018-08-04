@@ -6,7 +6,7 @@
  * @since    1.1.1
  * Plugin Name: WP Monitor
  * Description: Collects important data from site and displays it on the dashboard
- * Version:     1.1.4
+ * Version: 1.1.3
  * Author:      Ben Rothman
  * Slug:        wp-monitor
  * Author URI:  http://www.BenRothman.org
@@ -23,7 +23,7 @@ class WPMonitor {
 
 	public static $options;
 
-	public static $grades;
+	public $grades;
 
 	public static $highlight_color;
 
@@ -133,6 +133,16 @@ class WPMonitor {
 		$themes_that_need_updates = $this->get_themes_that_need_updates( wp_get_themes() );
 
 		echo '<h1>' . 'Status Page for: ' . get_option( 'home' ) . '</h1>';
+
+		echo '<h2>' . 'Plugin Updates: ' . self::$updates['plugins'] . ' Theme Updates: ' . self::$updates['themes'] . ' Core Updates: ' . self::$updates['WordPress'] . '</h2>';
+
+		// $grades = [
+		// 	'Plugins'   => ( ( ( count( get_plugins() ) - self::$updates['plugins'] ) / count( get_plugins() ) ) * 100 ),
+		// 	'Themes'    => ( ( ( count( wp_get_themes() ) - self::$updates['themes'] ) / count( wp_get_themes() ) ) * 100 ),
+		// 	'WordPress' => ( 0 == self::$updates['WordPress'] ) ? 100 : 50,
+		// 	'PHP'       => ( 0 == self::$updates['PHP_update'] ) ? 100 : 50,
+		// 	'SSL'       => self::$updates['SSL'] ? 100 : 50,
+		// ];
 
 		echo  '<table class="wpm_table" width="100%">';
 
@@ -354,8 +364,8 @@ class WPMonitor {
 			<li><a href="#tabs-dashboard-1">Updates (' . ( intval( self::$updates['plugins'] ) + intval( self::$updates['themes'] ) + intval( self::$updates['WordPress'] ) ) . ')</a></li>
 			<li><a href="#tabs-dashboard-2">SSL/PHP (' . ( is_ssl() ? 'on' : 'off' ) . '/' . $this->php_version( 2 ) . ')</a></li>
 			<li><a href="#tabs-dashboard-3">Grades</a></li>
-			<li><a href="#tabs-dashboard-4">Variables (...)</a></li>
-			<li><a href="#tabs-dashboard-5">User Logins</a></li>
+			<li><a href="#tabs-dashboard-4">Variables</a></li>
+			<li><a href="#tabs-dashboard-5">Users</a></li>
 		</ul>';
 
 		echo '</div>';
@@ -615,7 +625,7 @@ class WPMonitor {
 											<tr>
 												<th>' . __( 'Username', 'wp-monitor' ) . '</th>
 												<th>' . __( 'Date/Time', 'wp-monitor' ) . '</th>
-												<th>' . __( 'Last IP Used', 'wp-monitor' ) . '</th>
+												<th>' . __( 'IP Used', 'wp-monitor' ) . '</th>
 												<th>' . __( 'Location', 'wp-monitor' ) . '</th>
 											</tr>
 										</thead>';
@@ -795,7 +805,7 @@ class WPMonitor {
 	 */
 	public function calculate_grade() {
 
-				$grades = [
+				$this->grades = [
 					'Plugins'   => ( ( ( count( get_plugins() ) - self::$updates['plugins'] ) / count( get_plugins() ) ) * 100 ),
 					'Themes'    => ( ( ( count( wp_get_themes() ) - self::$updates['themes'] ) / count( wp_get_themes() ) ) * 100 ),
 					'WordPress' => ( 0 == self::$updates['WordPress'] ) ? 100 : 50,

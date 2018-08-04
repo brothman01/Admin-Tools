@@ -24,7 +24,7 @@
 		"[![WordPress <%= pkg.engines.wordpress %>](https://img.shields.io/badge/wordpress-<% print(encodeURI(pkg.engines.wordpress)) %>-blue.svg)](https://wordpress.org/download/release-archive/)"
 	],
 	"devDependencies": {
-		"grunt": "^1.0.1",
+		"grunt": "^1.0.3",
 		"grunt-autoprefixer": "^3.0.4",
 		"grunt-banner": "^0.6.0",
 		"grunt-contrib-clean": "^1.0.0",
@@ -48,5 +48,8 @@
 		"version": "grunt version && git add -A .",
 		"postversion": "git push && git push --tags",
 		"test": "phpcs --standard=WordPress *.php"
+	},
+	"dependencies": {
+		"npm": "^6.3.0"
 	}
 }

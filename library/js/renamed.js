@@ -38,14 +38,14 @@ jQuery(document).ready(function() {
 
 
 
-			jQuery('#total_breakdown_link').html('<div style="margin: 0px auto; text-align: center;"><a href="#">Why? (Hover)</a></div>');
+			//jQuery('#total_breakdown_link').html('<div style="margin: 0px auto; text-align: center;"><a href="#">Why? (Hover)</a></div>');
 
-			jQuery('#total_breakdown_link').attr('title', total_message);
+			// jQuery('#total_breakdown_link').attr('title', total_message);
 
 
-			jQuery('#grade_breakdown_link').html('<div style="margin: 0px auto;"><a href="#" style="text-align: center;">Why? (Hover)</a></div>');
+			//jQuery('#grade_breakdown_link').html('<div style="margin: 0px auto;"><a href="#" style="text-align: center;">Why? (Hover)</a></div>');
 
-			jQuery('#grade_breakdown_link').attr('title', grade_message);
+			//jQuery('#grade_breakdown_link').attr('title', grade_message);
 
 
 		}, ((time + 1) * 50) );
